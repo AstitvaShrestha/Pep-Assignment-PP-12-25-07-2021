@@ -28,13 +28,15 @@ function organize(paths){
             let ext = path.extname(fullPath);
             let basename = path.basename(fullPath);
        
+            let flag = 0;
+
             for(let key in types){
                  let typePath = path.join(organisedFiles, key);
-                 if(! fs.existsSync(organisedFiles)){
+                 if(! fs.existsSync(typePath)){
                     fs.mkdirSync(typePath);
                     }
                
-                let flag = 0;
+                
                 for(let k=0;k<types[key].length;k++){
                     if(ext.slice(1) == types[key][k]){
                         flag = 1;
@@ -43,6 +45,8 @@ function organize(paths){
                     }
                 }
 
+                }
+                
                 if(flag == 0){
                     let typePath = path.join(organisedFiles, "others");
                     if(! fs.existsSync(typePath)){
@@ -51,7 +55,6 @@ function organize(paths){
                     
                     let destPath =  path.join(typePath, basename);
                     fs.copyFileSync(fullPath, destPath);
-                }
             }
 
         }
