@@ -1,4 +1,4 @@
-function list(){
+function lists(){
     console.log("List of all commands");
     console.log("1. node main.js tree path");
     console.log("2. node main.js organize path");
@@ -7,5 +7,5 @@ function list(){
 }
 
 module.exports = {
-    list: list
+    list: lists
 }
