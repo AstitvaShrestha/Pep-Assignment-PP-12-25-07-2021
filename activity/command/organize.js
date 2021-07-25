@@ -43,7 +43,7 @@ function organize(paths){
                     }
                 }
 
-                if(flag = 0){
+                if(flag == 0){
                     let typePath = path.join(organisedFiles, "others");
                     if(! fs.existsSync(typePath)){
                         fs.mkdirSync(typePath);

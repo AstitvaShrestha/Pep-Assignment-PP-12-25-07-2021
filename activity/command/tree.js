@@ -14,7 +14,7 @@ function create(paths){
         let statsOfAPath = fs.lstatSync(fullPath);
 
         if(statsOfAPath.isFile()){
-            console.log("\t|__", entityName);
+            console.log("\t|—–", entityName);
         }
 
     }
